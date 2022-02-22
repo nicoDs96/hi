@@ -2,19 +2,22 @@
 title: "Dates intersection on SCD columns like a pro"
 layout: post
 date: 2022-02-21 23:57
-tag: query, SCD, dates, segments, intersection
-image: /assets/images/keep-training/
-headerImage: true
+tag: 
+- query
+- SCD
+- dates
+- segments
+- intersection
+image: /assets/images/time_seg_intersection/3.png
+headerImage: false
+star: true
 usemathjax: true
 projects: false
 hidden: false # don't count this post in blog pagination
 description: "Use logic to write queries conditions. Negate the problem to get a different perspective"
 category: blog
 author: nicods
-externalLink: false
 ---
-
-<!--<img class="image" src="{{ site.url }}/assets/images/keep-training/cover.png" alt="Cover Image"/>-->
 
 
 Working as Data Engineer makes you work with dates and time data a lot. Especially in the recent period where companies want to be Data-Driven, decisions are data-driven, your coffee machine is data-driven, and AI and ML require tons of data to work.
