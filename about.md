@@ -11,7 +11,9 @@ layout: page
 <h2>Skills</h2>
 
 <ul class="skill-list">
-	<li>Almost any database</li>
+	<li>Fast Learner</li>
+	<li>Polyglot developer</li>
+	<li>Databases</li>
 	<li>Hadoop Ecosystem</li>
 	<li>Apache Spark</li>
     <li>Some AI stuff: Pytorch, Scikit-Learn, Spark ML ...</li>
@@ -22,24 +24,11 @@ layout: page
 
 </ul>
 
-
-<h2>Programming in</h2>
-<ul class="skill-list">
-    <li>Scala</li>
-	<li>Java</li>
-	<li>C</li>
-	<li>Python</li>
-	<li>Javascript (pure JS or Node.js)</li>
-	<li>SQL</li>
-	<li>PHP</li>
-</ul>
-
-
 <h2>Projects</h2>
 
 <ul>
 	<li><a href="https://github.com/nicoDs96/Document-Similarity-using-Python-and-PySpark">Fast duplicate documents detection</a></li>
-	<li><a href="https://github.com/nicoDs96/Trading-Bot---Deep-Reinforcement-Learning">A bitcoin trading bot</a></li>
-	<li><a href="https://github.com/nicoDs96/BoxeTimer">Simple gym tymer</a></li>
+	<li><a href="https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/">A bitcoin trading bot</a></li>
+	<li><a href="https://nicods96.github.io/hi/keep-training-on-vacations/">Simple gym tymer</a></li>
 	<li><a href="https://github.com/nicoDs96/IoT-meteo_station">IoT environmental station example</a></li>
 </ul>
