@@ -25,7 +25,7 @@ url: https://nicods96.github.io/hi/
 permalink: /:title/
 
 # To enable google analytics, supply your token below
-# analytics-google: 'UA-MYANALYTICS'
+analytics-google: 'G-08VXMP329W'
 
 # if you don't want comments in your posts, leave categories empty
 disqus:
