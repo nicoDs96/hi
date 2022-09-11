@@ -13,10 +13,12 @@ author: nicods
 externalLink: false
 ---
 
+<!-- USED TO EXPORT MATH FORMULAS IN PDF FROM MARKDOWN
+
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
-</script>
+</script> -->
 
 
 <!--<img class="image" src="{{ site.url }}/assets/images/keep-training/cover.png" alt="Cover Image"/>-->
