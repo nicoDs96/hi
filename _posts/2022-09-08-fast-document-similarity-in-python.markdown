@@ -88,10 +88,11 @@ In general, we might want to hash shingles to reduce their size, but even by has
 The minash of a set can be seen as its signature, which is a unique and short representation of the set with a fixed length. The magic of MinHashing for a set is that it preserves Jaccard similarity (more or less).
 
 We can represent a set with its characteristic matrix: a matrix whose columns are sets and rows are elements. The matrix contains a 1 in all the cells that correspond to an element contained in a set.
-For example:
-S1 = {a, b}, S2 = {a, c} S3 = {a,b,c,d}
+For example:  
+S1 = {a, b}, S2 = {a, c} S3 = {a,b,c,d}  
+  
 | |S1|S2|S3|
-|-| -| -| -|
+|-|--|--|--|
 |a| 1| 1| 1|
 |b| 1| 0| 1|
 |c| 0| 1| 1|
@@ -99,17 +100,18 @@ S1 = {a, b}, S2 = {a, c} S3 = {a,b,c,d}
 
 Ideally, the minhash function takes a random permutation of the rows and for each set return the first element with a 1 in the characteristic matrix with permuted rows:
 if the permutation is `badc`, the characteristic matrix is
+
 | |S1|S2|S3|
-|-| -| -| -|
+|-|--|--|--|
 |b| 1| 0| 1|
 |a| 1| 1| 1|
 |d| 0| 0| 1|
 |c| 0| 1| 1|
 
-and the minhash values are
-Minhash(S1) = b
-Minhash(S2) = a
-Minhash(S3) = b
+and the minhash values are  
+Minhash(S1) = b  
+Minhash(S2) = a  
+Minhash(S3) = b  
 
 We obtain a signature of size n for the set if we compute minhash for n random permutations of the rows of the characteristic matrix. 
 
