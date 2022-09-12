@@ -19,6 +19,7 @@ category: blog
 author: nicods
 ---
 
+> A copy of this article has been published on [Codemotion Magazione](https://www.codemotion.com/magazine/ai-ml/data-science/date-intervals-in-data-warehouses-and-data-lakes/)  
 
 Working as Data Engineer makes you work with dates and time data a lot. Especially in the recent period where companies want to be Data-Driven, decisions are data-driven, your coffee machine is data-driven, and AI and ML require tons of data to work.
 
