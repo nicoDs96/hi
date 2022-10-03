@@ -387,7 +387,7 @@ print(dataset.iloc[docs[0]] )
 print("Is similar to\nDoc2:")
 print(dataset.iloc[docs[1]] )
 ```
-Print stats
+Print stats  
 ```python
 report = ('LSH\n%.2f seconds to execute\n'
     '%d similar documents found\n\n'
