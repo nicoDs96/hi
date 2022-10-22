@@ -329,7 +329,7 @@ The key role of the native image here is the fast startup of the API service, wh
 `2022-10-21 11:06:40,514 INFO  [io.quarkus] (main) news-aggregator 0.0.1 native (powered by Quarkus 2.13.2.Final) started in 0.286s. Listening on: http://0.0.0.0:8080`
 
 ## How to deploy your own
-If you want to use the code to build your news aggregation website, here is the step you need to follow.
+If you want to use the code to build your news aggregation website, here is the step you need to follow.  
 1) Fork the [repo](https://github.com/nicoDs96/tech-news-daily) and enable GitHub Pages.
 2) Create an Atlas MongoDB cluster following the procedure on the [website](https://www.mongodb.com/atlas/database)
     * create a database named Feeds
