@@ -1,7 +1,7 @@
 ---
 title: "Building a custom news feed"
 layout: post
-date: 2022-10-23 20:00
+date: 2022-10-22 17:00
 tag:
  - Angular
  - Quarkus
