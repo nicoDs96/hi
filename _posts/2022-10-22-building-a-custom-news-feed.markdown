@@ -2,10 +2,17 @@
 title: "Building a custom news feed"
 layout: post
 date: 2022-10-22 17:00
-tag: custom-news-fees
+tag:
+ - Angular
+ - Quarkus
+ - Serverless
+ - Google Cloud Run
+ - Mongo DB
+ - RSS
+ - Atom
 image: /assets/images/news-feed/
 headerImage: true
-projects: true
+projects: false
 hidden: false # don't count this post in blog pagination
 description: "A step-by-step journey into building a custom news feed with Angular, Quarkus, and MongoDB and deploying it to Google Cloud, for free!"
 category: project
