@@ -330,17 +330,17 @@ The key role of the native image here is the fast startup of the API service, wh
 
 ## How to deploy your own
 If you want to use the code to build your news aggregation website, here is the step you need to follow.  
-1) Fork the [repo](https://github.com/nicoDs96/tech-news-daily) and enable GitHub Pages.
-2) Create an Atlas MongoDB cluster following the procedure on the [website](https://www.mongodb.com/atlas/database)
+1. Fork the [repo](https://github.com/nicoDs96/tech-news-daily) and enable GitHub Pages.
+2. Create an Atlas MongoDB cluster following the procedure on the [website](https://www.mongodb.com/atlas/database)
     * create a database named Feeds
     * creare a collection named NewsFeed
-3) Once you have an instance up and running, copy the connection string and paste it into `feed-poller/src/main/resources/application.properties` and `news-aggregator/src/main/resources/application.properties`
-4) Set your own feeds into `feed-poller/src/main/resources/application.properties`
-5) Run everything locally to see if it works 
+3. Once you have an instance up and running, copy the connection string and paste it into `feed-poller/src/main/resources/application.properties` and `news-aggregator/src/main/resources/application.properties`
+4. Set your own feeds into `feed-poller/src/main/resources/application.properties`
+5. Run everything locally to see if it works 
     * start the poller in dev mode (`cd feed-poller && quarkus dev`)
     * start the API in dev mode (`cd news-aggregator && quarkus dev`)
     * serve the webapp (`cd news-html && ng serve`)
-6) Follow the deployment steps detailed previously to make the website available to the public.
+6. Follow the deployment steps detailed previously to make the website available to the public.
 
 ## Now what?
 The project was really useful to deepen some interesting frameworks I was curious about. I think it has also the potential to become something more complex and interesting, for example adding support for users, allowing different users to have custom feeds, exposing common feeds to a subset of users, adding push notifications, distribution lists etc. 
