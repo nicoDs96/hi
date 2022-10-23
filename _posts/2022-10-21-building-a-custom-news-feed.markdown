@@ -12,7 +12,7 @@ tag:
 - Atom
 image: assets/images/news-feed/cover.png
 headerImage: true
-projects: false
+projects: true
 hidden: false # don't count this post in blog pagination
 description: "A step-by-step journey into building a custom news feed with Angular, Quarkus, and MongoDB and deploying it to Google Cloud, for free!"
 category: project
