@@ -22,7 +22,6 @@ externalLink: false
 
 <img class="image" src="{{ site.url }}/assets/images/news-feed/cover.png" alt="Cover Image"/>
 
-# Building a custom news feed
 In this article, I will explain how to create a website that shows you the latest post from your favorite blog, newspaper, or whatever with RSS/Atom feed support.  
 * I will explain why to do it
 * Where you can find it
