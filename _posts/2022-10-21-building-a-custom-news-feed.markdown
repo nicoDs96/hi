@@ -1,5 +1,5 @@
 ---
-title: "Building a custom news feed"
+title: Building a custom news feed
 layout: post
 date: 2022-10-22 00:00
 tag: 
@@ -14,7 +14,7 @@ image: assets/images/news-feed/cover.png
 headerImage: true
 projects: true
 hidden: false # don't count this post in blog pagination
-description: "A step-by-step journey into building a custom news feed with Angular, Quarkus, and MongoDB and deploying it to Google Cloud, for free!"
+description: A step-by-step journey into building a custom news feed with Angular, Quarkus, and MongoDB and deploying it to Google Cloud, for free!
 category: project
 author: nicods
 externalLink: false
