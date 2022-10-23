@@ -2,7 +2,12 @@
 title: "Designing A Deep Reinforcement Learning Trading Bot With PyTorch"
 layout: post
 date: 2022-01-22 18:04
-tag: PyTorch, DRL, trading, bot, forecasting
+tag: 
+- PyTorch
+- DRL
+- trading
+- bot
+- forecasting
 headerImage: true
 usemathjax: true
 projects: false

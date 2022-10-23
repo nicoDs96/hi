@@ -2,8 +2,15 @@
 title: "Building a custom news feed"
 layout: post
 date: 2022-10-21 23:00
-tag: Angular, Quarkus, Serverless, Google Cloud Run, Mongo DB, RSS, Atom
-image: /assets/images/news-feed/
+tag: 
+- Angular
+- Quarkus
+- Serverless
+- Google Cloud Run
+- Mongo DB
+- RSS
+- Atom
+image: {{ site.url }}/assets/images/news-feed/cover.png
 headerImage: true
 projects: false
 hidden: false # don't count this post in blog pagination

@@ -2,7 +2,12 @@
 title: "Fast Document Similarity In Python with Minhash Locality Sensitive Hashing (MinHashLSH)"
 layout: post
 date: 2022-09-08 18:00
-tag: python, lsh, minhash, similarity, forecasting
+tag: 
+- python
+- lsh
+- minhash
+- similarity
+- forecasting
 headerImage: true
 usemathjax: true
 projects: false
