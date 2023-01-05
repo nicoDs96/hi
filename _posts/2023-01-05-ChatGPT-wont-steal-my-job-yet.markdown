@@ -16,7 +16,7 @@ author: nicods
 externalLink: false
 ---
 
-<img class="image" src="{{ site.url }}/assets/images/news-feed/cover.png" alt="Cover Image"/>
+<img class="image" src="{{ site.url }}/assets/images/chatgpt/cover.jpg" alt="Cover Image"/>
 
 Since its release, we have heard a lot about [ChatGPT](https://openai.com/blog/chatgpt/), how it is amazing, how it will steal our job, how we are close to Touring completeness bla bla. As always, when a new product is released, there is a lot of hype and a lot of people talking about things they know nothing about. With this post I would like to share my experience, to show how we are far from AI taking over the world.
 
