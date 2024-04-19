@@ -98,8 +98,8 @@ java --jar debezium-demo.jar
 ```
 
 Now all the operations made on the table `dummy_table` will be recorded under `tracking.dummy_table_tracking`:
-<img class="image" src="{{ site.url }}/assets/images/cdc/log.jpg" alt="Debezium Log Screenshot"/>
-<img class="image" src="{{ site.url }}/assets/images/cdc/psql.jpg" alt="Psql Screenshot"/>
+<img class="image" src="{{ site.url }}/assets/images/cdc/log.png" alt="Debezium Log Screenshot"/>
+<img class="image" src="{{ site.url }}/assets/images/cdc/psql.png" alt="Psql Screenshot"/>
 
 Looks like magic but it's not. Let's break it down.
 
