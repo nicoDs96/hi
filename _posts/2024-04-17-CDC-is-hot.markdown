@@ -16,7 +16,7 @@ author: nicods
 externalLink: false
 ---
 
-<img class="image" src="{{ site.url }}/assets/images/chatgpt/cover.jpg" alt="Cover Image"/>
+<img class="image" src="{{ site.url }}/assets/images/cdc/cover.jpg" alt="Cover Image"/>
 
 The most interesting breakthrough in the software industry from a technical point of view generally goes unnoticed by most of the people working in tech. I like to think about it as the Nobel prize: nobody understands and nobody cares about you and your useless research until you make a lot of money with it or you win the Nobel prize. 
 Sometimes the industry lets you believe, with an incredibly expensive marketing campaign, that there is a revolution in progress thanks to the technology they want to sell. Then the hype goes away and tech people start realizing that the cloud is just server rental with very high cost and low benefits, that blockchain is useless unless you want to revolutionize the economic system, and so on... Now it's the moment of A.I., a bunch of matrix multiplications, which really few people in the world really understand, and that consumes tons of energy.
@@ -35,7 +35,8 @@ In the following example, we are going to use only its engine to track the chang
 ## The Experiment
 You can find the whole project on GitHub at:
 * [Debezium Demo](https://github.com/nicoDs96/debezium-engine-demo) 
-* [Jar file](https://github.com/nicoDs96/debezium-engine-demo/releases/tag/v0.0.1-alpha)
+* [Jar file](https://github.com/nicoDs96/debezium-engine-demo/releases/tag/v0.0.1-alpha)  
+
 And some useful documentation to customize the project at:
 * [PostgreSQL connector documentation](https://debezium.io/documentation/reference/stable/connectors/postgresql.html) 
 
