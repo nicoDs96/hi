@@ -58,3 +58,7 @@ Finally, you can find the completed Python script on my GitHub@[btc-flashing-dem
 ## Conclusion
 
 Sadly, we still haven’t found money growing on trees. :(
+
+## Proof
+Using a blockchain explorer online we can verify the recipient wallet balance. We can see that there are some unconfirmed BTC that will never be confirmed. 
+<img class="image" src="{{ site.url }}/assets/images/btc-flash/3.png" alt="Proof"/>
