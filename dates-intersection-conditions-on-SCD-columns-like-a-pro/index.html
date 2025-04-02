@@ -20,20 +20,24 @@
     <meta name=author content="Nicola Di Santo">
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Nicola Di Santo | A blog about technology and stuff related</title>
+<title>Dates intersection on SCD columns like a pro | Nicola Di Santo</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Nicola Di Santo" />
+<meta property="og:title" content="Dates intersection on SCD columns like a pro" />
+<meta name="author" content="nicods" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A blog about technology and stuff related" />
-<meta property="og:description" content="A blog about technology and stuff related" />
-<link rel="canonical" href="https://nicods96.github.io/hi/404.html" />
-<meta property="og:url" content="https://nicods96.github.io/hi/404.html" />
+<meta name="description" content="Use logic to write queries conditions. Negate the problem to get a different perspective" />
+<meta property="og:description" content="Use logic to write queries conditions. Negate the problem to get a different perspective" />
+<link rel="canonical" href="https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/" />
+<meta property="og:url" content="https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/" />
 <meta property="og:site_name" content="Nicola Di Santo" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Nicola Di Santo" />
+<meta property="og:image" content="https://nicods96.github.io/hi/assets/images/time_seg_intersection/3.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-02-21T23:57:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://nicods96.github.io/hi/assets/images/time_seg_intersection/3.png" />
+<meta property="twitter:title" content="Dates intersection on SCD columns like a pro" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A blog about technology and stuff related","headline":"Nicola Di Santo","url":"https://nicods96.github.io/hi/404.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"nicods"},"dateModified":"2022-02-21T23:57:00+00:00","datePublished":"2022-02-21T23:57:00+00:00","description":"Use logic to write queries conditions. Negate the problem to get a different perspective","headline":"Dates intersection on SCD columns like a pro","image":"https://nicods96.github.io/hi/assets/images/time_seg_intersection/3.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/"},"url":"https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -59,7 +63,7 @@
 <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
 
-    <link rel="canonical" href="https://nicods96.github.io/hi/404.html">
+    <link rel="canonical" href="https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/">
     <link rel="alternate" type="application/rss+xml" title="" href="https://nicods96.github.io/hi/feed.xml" />
 
     <style>
@@ -1310,25 +1314,986 @@ pre {
 
     <!-- for mathjax support -->
     
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+    </script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 </head>
 <body>
 
     <div class="wrapper-normal">
         
+            <div class="post">
+        
+
             
-                <div class="page ">
+
+
+
+<nav class="nav">
+    <ul class="list">
+        
+            <li class="item">
+                <a class="link" href="https://nicods96.github.io/hi/">Home</a>
+            </li>
+        
+
+        
+            
+                <li class="item">
+                    <a class="link" href="https://nicods96.github.io/hi/blog">Blog</a>
+                </li>
             
         
 
-            <section class="lost-container">
-  <h1>Uh oh!</h1>
-  <div class="link">
-    <img class="selfie" alt="Nicola Di Santo" src="https://nicods96.github.io/hi/assets/images/error.gif" />
-  </div>
-  <br />
-  <br />
-  <a href="/">Take me home!</a>
+        
+            
+                <li class="item">
+                    <a class="link" href="https://nicods96.github.io/hi/projects">Projects</a>
+                </li>
+            
+        
+
+        
+            
+                <li class="item">
+                    <a class="link" href="https://nicods96.github.io/hi/about">About</a>
+                </li>
+            
+        
+
+        
+    </ul>
+</nav>
+
+
+
+
+
+<h1 class="title">Dates intersection on SCD columns like a pro</h1>
+
+<span class="date">
+    <time datetime="21-02-2022">Monday. February 21, 2022</time>
+     - <span class="reading-time" title="Estimated read time">
+    
+
+    
+        6 mins
+    
+</span>
+
+</span>
+
+
+    <div class="post-tags">
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#query">query</a>
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#scd">SCD</a>
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#dates">dates</a>
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#segments">segments</a>
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#intersection">intersection</a>
+        
+    </div>
+
+
+<blockquote>
+  <p>A copy of this article has been published on <a href="https://www.codemotion.com/magazine/ai-ml/data-science/date-intervals-in-data-warehouses-and-data-lakes/">Codemotion Magazione</a></p>
+</blockquote>
+
+<p>Working as Data Engineer makes you work with dates and time data a lot. Especially in the recent period where companies want to be Data-Driven, decisions are data-driven, your coffee machine is data-driven, and AI and ML require tons of data to work.</p>
+
+<p>In a data warehouse or data lake context, modeling data using a type of <a href="https://en.wikipedia.org/wiki/Slowly_changing_dimension">slow changing dimenion</a> (SCD) is a quite popular choice. 
+For example, suppose you have clients registry data, and each time a client changes his shipping address then you set the end_date of the previous shipping address and the start_date of the new record with the timestamp the modification inside the address_tbl:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>client_id</th>
+      <th>shipping_address</th>
+      <th>start_timestamp</th>
+      <th>end_timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>client_1</td>
+      <td>383 Trusel DriveNorth Andover, MA 01845</td>
+      <td>2015-01-14 00:00:00</td>
+      <td>2017-05-11 10:00:00</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>91 Gates St. Valrico, FL 33594</td>
+      <td>2017-05-11 10:00:00</td>
+      <td>2999-01-01 23:59:59</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Then you know that a client_1’s current shipping_address is the one satisfying the condition</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">client_id</span><span class="o">=</span><span class="n">client_1</span> <span class="k">and</span>
+    <span class="n">address_tbl</span><span class="p">.</span><span class="n">start_date</span> <span class="o">&lt;=</span> <span class="k">current_date</span> <span class="o">&lt;</span> <span class="n">address_tbl</span><span class="p">.</span><span class="n">end_date</span> 
+</code></pre></div></div>
+
+<p>Then you have another table called fav_payment_method telling your client’s favourtie payment method:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>client_id</th>
+      <th>start_timestamp</th>
+      <th>end_timestamp</th>
+      <th>payment_method</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>client_1</td>
+      <td>2015-01-01 00:00:00</td>
+      <td>2016-01-01 00:00:00</td>
+      <td>at_delivery_time</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2016-01-01 00:00:00</td>
+      <td>2018-01-01 10:00:00</td>
+      <td>paypal</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2018-01-01 10:00:00</td>
+      <td>2019-01-01 23:00:00</td>
+      <td>credit card</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2019-01-01 23:00:00</td>
+      <td>2999-01-01 23:59:59</td>
+      <td>paypal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>And, don’t ask the BU why, but you have to associate to each client’s shipping address his favorite payment method. How often do I see people doing that? 
+Sometimes:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="n">address_tbl</span> <span class="k">at</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">fav_payment_method</span> <span class="n">fpm</span>
+    <span class="k">ON</span> <span class="k">at</span><span class="p">.</span><span class="n">client_id</span> <span class="o">=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">client_id</span>
+<span class="k">WHERE</span>   <span class="p">(</span><span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&gt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="k">AND</span> 
+        <span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&lt;</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span><span class="p">)</span> <span class="k">OR</span> <span class="c1">-- (1)</span>
+        <span class="p">(</span><span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&gt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="k">AND</span>
+        <span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&lt;</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span><span class="p">)</span>  <span class="c1">-- (2)</span>
+</code></pre></div></div>
+<p>That graphically is 
+<img class="image" src="https://nicods96.github.io/hi/assets/images/time_seg_intersection/1.png" alt="Cover Image" /></p>
+
+<p>And you can clearly see that there is a case that is not covered!</p>
+
+<p>Other times:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="n">address_tbl</span> <span class="k">at</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">fav_payment_method</span> <span class="n">fpm</span>
+    <span class="k">ON</span> <span class="k">at</span><span class="p">.</span><span class="n">client_id</span> <span class="o">=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">client_id</span>
+<span class="k">WHERE</span>   <span class="p">(</span><span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&gt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="k">AND</span>
+        <span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&lt;</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span><span class="p">)</span> <span class="k">OR</span> <span class="c1">-- (1)</span>
+        <span class="p">(</span><span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&gt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="k">AND</span>
+        <span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&lt;</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span><span class="p">)</span> <span class="k">OR</span> <span class="c1">-- (2 )</span>
+        <span class="p">(</span><span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&gt;=</span> <span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="k">AND</span>
+        <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&lt;</span> <span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span><span class="p">)</span> <span class="k">OR</span> <span class="c1">-- (3)</span>
+        <span class="p">(</span><span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&gt;=</span> <span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="k">AND</span>
+        <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&lt;</span> <span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span><span class="p">)</span>  <span class="c1">-- (4)</span>
+</code></pre></div></div>
+<p>That is like the previous image plus other two cases (still with some uncovered options!)
+<img class="image" src="https://nicods96.github.io/hi/assets/images/time_seg_intersection/2.png" alt="Cover Image" /></p>
+
+<p>But indeed we can be less naive than this. It turns out that the problem is a 1D segment intersection problem. Segments are your ranges of dates and you only need to take the periods that intersect. But how can we write that? And can we do it simply?<br />
+Well, we can say that two segments intersect if and only if they not(not intersect). Ah-ah, simple right?</p>
+
+<p><img class="image" src="https://nicods96.github.io/hi/assets/images/time_seg_intersection/3.png" alt="Cover Image" /></p>
+
+<p>from the picture we see that there isn’t an intersection when:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&gt;</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="k">or</span> <span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&lt;</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span>
+</code></pre></div></div>
+<p>This also means that negating this condition we obtain not(not intersect)</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&lt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="k">and</span>  <span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&gt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span>
+</code></pre></div></div>
+
+<p>and we can finally write a simple, clean and concise query that does exactly what we wanted:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="n">address_tbl</span> <span class="k">at</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">fav_payment_method</span> <span class="n">fpm</span>
+    <span class="k">ON</span> <span class="k">at</span><span class="p">.</span><span class="n">client_id</span> <span class="o">=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">client_id</span>
+<span class="k">WHERE</span>   <span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&lt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="k">and</span>  
+        <span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&gt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>fpm.client_id</th>
+      <th>fpm.start_timestamp</th>
+      <th>fpm.end_timestamp</th>
+      <th>fpm.payment_method</th>
+      <th>at.client_id</th>
+      <th>at.shipping_address</th>
+      <th>at.start_timestamp</th>
+      <th>at.end_timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>client_1</td>
+      <td>2015-01-01 00:00:00</td>
+      <td>2016-01-01 00:00:00</td>
+      <td>at_delivery_time</td>
+      <td>client_1</td>
+      <td>383 Trusel DriveNorth Andover, MA 01845</td>
+      <td>2015-01-14 00:00:00</td>
+      <td>2017-05-11 10:00:00</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2016-01-01 00:00:00</td>
+      <td>2018-01-01 10:00:00</td>
+      <td>paypal</td>
+      <td>client_1</td>
+      <td>383 Trusel DriveNorth Andover, MA 01845</td>
+      <td>2015-01-14 00:00:00</td>
+      <td>2017-05-11 10:00:00</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2016-01-01 00:00:00</td>
+      <td>2018-01-01 10:00:00</td>
+      <td>paypal</td>
+      <td>client_1</td>
+      <td>91 Gates St. Valrico, FL 33594</td>
+      <td>2017-05-11 10:00:00</td>
+      <td>2999-01-01 23:59:59</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2018-01-01 10:00:00</td>
+      <td>2019-01-01 23:00:00</td>
+      <td>credit card</td>
+      <td>client_1</td>
+      <td>91 Gates St. Valrico, FL 33594</td>
+      <td>2017-05-11 10:00:00</td>
+      <td>2999-01-01 23:59:59</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2019-01-01 23:00:00</td>
+      <td>2999-01-01 23:59:59</td>
+      <td>paypal</td>
+      <td>client_1</td>
+      <td>91 Gates St. Valrico, FL 33594</td>
+      <td>2017-05-11 10:00:00</td>
+      <td>2999-01-01 23:59:59</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="hey-there-are-two-start_timestamp-and-end_timestamp-and-they-overlap-what-should-i-do">“Hey there are two start_timestamp and end_timestamp and they overlap, what should I do?”</h2>
+<p>So far so good, but then the final user of the tables says “Hey there are two start_timestamp and end_timestamp and they overlap, what should I do? Why are you data engineer always making my life difficult? I hate you guys!”. It hurts our feelings each time we heard a complaint, so we go one step further and give them a unique, continuous, and coherent start_timestamp and end_timestamp. But How?<br />
+<img class="image" src="https://nicods96.github.io/hi/assets/images/time_seg_intersection/4.png" alt="Cover Image" />
+Looking at the picture We can compute the intersection of the date segments to get the new periods for each record. The intersection of 1D segments is \(intersection\_start\_timestamp = max(ad.start\_timestamp, fpm.start\_timestamp)\) and \(intersection\_end\_timestamp = min(ad.end\_timestamp, fpm.end\_timestamp)\)
+<img class="image" src="https://nicods96.github.io/hi/assets/images/time_seg_intersection/5.gif" alt="Cover Image" />
+and the final result is:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">fpm</span><span class="p">.</span><span class="n">client_id</span><span class="p">,</span> 
+    <span class="n">greatest</span><span class="p">(</span><span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span><span class="p">,</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span><span class="p">)</span> <span class="k">as</span> <span class="n">start_timestamp</span><span class="p">,</span>
+    <span class="n">least</span><span class="p">(</span><span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span><span class="p">,</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span><span class="p">)</span> <span class="k">as</span> <span class="n">end_timestamp</span><span class="p">,</span>
+    <span class="n">fpm</span><span class="p">.</span><span class="n">payment_method</span><span class="p">,</span>
+    <span class="k">at</span><span class="p">.</span><span class="n">shipping_address</span>
+<span class="k">FROM</span> <span class="n">address_tbl</span> <span class="k">at</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">fav_payment_method</span> <span class="n">fpm</span>
+    <span class="k">ON</span> <span class="k">at</span><span class="p">.</span><span class="n">client_id</span> <span class="o">=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">client_id</span>
+<span class="k">WHERE</span>   <span class="k">at</span><span class="p">.</span><span class="n">start_timestamp</span> <span class="o">&lt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="k">and</span>  
+        <span class="k">at</span><span class="p">.</span><span class="n">end_timestamp</span> <span class="o">&gt;=</span> <span class="n">fpm</span><span class="p">.</span><span class="n">start_timestamp</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>client_id</th>
+      <th>start_timestamp</th>
+      <th>end_timestamp</th>
+      <th>payment_method</th>
+      <th>shipping_address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>client_1</td>
+      <td>2015-01-01 00:00:00</td>
+      <td>2016-01-01 00:00:00</td>
+      <td>at_delivery_time</td>
+      <td>383 Trusel DriveNorth Andover, MA 01845</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2016-01-01 00:00:00</td>
+      <td>2017-05-11 10:00:00</td>
+      <td>paypal</td>
+      <td>383 Trusel DriveNorth Andover, MA 01845</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2017-05-11 10:00:00</td>
+      <td>2018-01-01 10:00:00</td>
+      <td>paypal</td>
+      <td>91 Gates St. Valrico, FL 33594</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2018-01-01 10:00:00</td>
+      <td>2019-01-01 23:00:00</td>
+      <td>credit card</td>
+      <td>91 Gates St. Valrico, FL 33594</td>
+    </tr>
+    <tr>
+      <td>client_1</td>
+      <td>2019-01-01 23:00:00</td>
+      <td>2999-01-01 23:59:59</td>
+      <td>paypal</td>
+      <td>91 Gates St. Valrico, FL 33594</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Have a good query!</p>
+
+
+
+    <div class="blog-navigation">
+        
+            <a class="prev" href="https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/">&laquo; Designing A Deep Reinforcement Learning Trading Bot With PyTorch</a>
+        
+        
+            <a class="next" href="https://nicods96.github.io/hi/fast-document-similarity-in-python/">Fast Document Similarity In Python with Minhash Locality Sensitive Hashing (MinHashLSH) &raquo;</a>
+        
+    </div>
+
+
+
+    <div class="related">
+    
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+    
+</div>
+
+
+
+
+    <section class="author">
+    <div class="toleft">
+        <img
+            class="selfie"
+            src="https://nicods96.github.io/hi/assets/images/profile.jpg"
+            alt="Nicola Di Santo"
+        />
+    </div>
+
+    <div class="toright">
+        <h4 class="name">Nicola Di Santo</h4>
+        <p class="bio">A Person who loves tech, bikes and fighting sports</p>
+
+        <div class="share">
+            <!-- Note: Only use three share links if your site width is set to large -->
+            <!-- If site width is set to normal, you may choose any two share links -->
+            <a
+                class="twitter"
+                href="https://twitter.com/intent/tweet?text=https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/ - Dates intersection on SCD columns like a pro by @johndoe"
+            >
+                <svg class="icon icon-twitter">
+                    <use xlink:href="#icon-twitter"></use></svg
+                ><span class="icon-twitter">Tweet</span>
+            </a>
+
+            <a
+                class="facebook"
+                href="javascript:void(0)"
+                onclick="window.open('https://facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"
+            >
+                <svg class="icon icon-facebook">
+                    <use xlink:href="#icon-facebook"></use></svg
+                ><span class="icon-facebook-rect">Share</span>
+            </a>
+
+            <!-- <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/&amp;title=Dates intersection on SCD columns like a pro&amp;summary=Use logic to write queries conditions. Negate the problem to get a different perspective&amp;source=https://nicods96.github.io/hi" target="_blank">
+                <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span class="icon-linkedin">Share</span>
+            </a> -->
+
+            <!-- <a class="reddit" href="https://reddit.com/submit?url=https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/&amp;title=Dates intersection on SCD columns like a pro" target="_blank">
+                <svg class="icon icon-reddit"><use xlink:href="#icon-reddit"></use></svg><span class="icon-reddit">Share</span>
+            </a> -->
+        </div>
+    </div>
 </section>
+
+
+
+
+
+
+<footer class="footer-main">
+    Nicola Di Santo © 2025
+
+    <a class="link" href="https://nicods96.github.io/hi/feed.xml" target="_blank">
+        <svg class="icon icon-rss">
+            <use xlink:href="#icon-rss"></use>
+        </svg>
+    </a>
+
+    <p class="extra">
+        <a class="link" href="https://github.com/sergiokopplin/indigo">Indigo theme</a>
+        by
+        <a class="link" href="https://github.com/sergiokopplin/indigo">Kopplin</a>
+    </p>
+</footer>
+
+
         </div>
     </div>
 

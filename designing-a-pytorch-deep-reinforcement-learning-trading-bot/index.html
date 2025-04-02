@@ -20,20 +20,22 @@
     <meta name=author content="Nicola Di Santo">
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Nicola Di Santo | A blog about technology and stuff related</title>
+<title>Designing A Deep Reinforcement Learning Trading Bot With PyTorch | Nicola Di Santo</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Nicola Di Santo" />
+<meta property="og:title" content="Designing A Deep Reinforcement Learning Trading Bot With PyTorch" />
+<meta name="author" content="nicods" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A blog about technology and stuff related" />
-<meta property="og:description" content="A blog about technology and stuff related" />
-<link rel="canonical" href="https://nicods96.github.io/hi/404.html" />
-<meta property="og:url" content="https://nicods96.github.io/hi/404.html" />
+<meta name="description" content="A personal implementation of an existing paper about bitcoin trading using a deep reinforcement learning trading agent." />
+<meta property="og:description" content="A personal implementation of an existing paper about bitcoin trading using a deep reinforcement learning trading agent." />
+<link rel="canonical" href="https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/" />
+<meta property="og:url" content="https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/" />
 <meta property="og:site_name" content="Nicola Di Santo" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-22T18:04:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Nicola Di Santo" />
+<meta property="twitter:title" content="Designing A Deep Reinforcement Learning Trading Bot With PyTorch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A blog about technology and stuff related","headline":"Nicola Di Santo","url":"https://nicods96.github.io/hi/404.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"nicods"},"dateModified":"2022-01-22T18:04:00+00:00","datePublished":"2022-01-22T18:04:00+00:00","description":"A personal implementation of an existing paper about bitcoin trading using a deep reinforcement learning trading agent.","headline":"Designing A Deep Reinforcement Learning Trading Bot With PyTorch","mainEntityOfPage":{"@type":"WebPage","@id":"https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/"},"url":"https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -59,7 +61,7 @@
 <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
 
-    <link rel="canonical" href="https://nicods96.github.io/hi/404.html">
+    <link rel="canonical" href="https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/">
     <link rel="alternate" type="application/rss+xml" title="" href="https://nicods96.github.io/hi/feed.xml" />
 
     <style>
@@ -1310,25 +1312,775 @@ pre {
 
     <!-- for mathjax support -->
     
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+    </script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 </head>
 <body>
 
     <div class="wrapper-normal">
         
+            <div class="post">
+        
+
             
-                <div class="page ">
+
+
+
+<nav class="nav">
+    <ul class="list">
+        
+            <li class="item">
+                <a class="link" href="https://nicods96.github.io/hi/">Home</a>
+            </li>
+        
+
+        
+            
+                <li class="item">
+                    <a class="link" href="https://nicods96.github.io/hi/blog">Blog</a>
+                </li>
             
         
 
-            <section class="lost-container">
-  <h1>Uh oh!</h1>
-  <div class="link">
-    <img class="selfie" alt="Nicola Di Santo" src="https://nicods96.github.io/hi/assets/images/error.gif" />
-  </div>
-  <br />
-  <br />
-  <a href="/">Take me home!</a>
+        
+            
+                <li class="item">
+                    <a class="link" href="https://nicods96.github.io/hi/projects">Projects</a>
+                </li>
+            
+        
+
+        
+            
+                <li class="item">
+                    <a class="link" href="https://nicods96.github.io/hi/about">About</a>
+                </li>
+            
+        
+
+        
+    </ul>
+</nav>
+
+
+
+
+
+<h1 class="title">Designing A Deep Reinforcement Learning Trading Bot With PyTorch</h1>
+
+<span class="date">
+    <time datetime="22-01-2022">Saturday. January 22, 2022</time>
+     - <span class="reading-time" title="Estimated read time">
+    
+
+    
+        6 mins
+    
+</span>
+
+</span>
+
+
+    <div class="post-tags">
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#pytorch">PyTorch</a>
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#drl">DRL</a>
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#trading">trading</a>
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#bot">bot</a>
+        
+            <a class="item" href="https://nicods96.github.io/hi/tags/#forecasting">forecasting</a>
+        
+    </div>
+
+
+<!--<img class="image" src="https://nicods96.github.io/hi/assets/images/keep-training/cover.png" alt="Cover Image"/>-->
+<p>A few years ago, at university, to pass the exam of Neural Networks class we should implement a recent paper and try to replicate results. At that time a friend of mine wrote a paper based on his thesis for his bachelor’s degree about a deep reinforcement trading bot that was able to trade bitcoin and he claims the bot could make profits. I was a bit skeptical about it and decided to implement a personal version of the bot, test it, and use it as the final project of the NN class. Here I am going to describe it.</p>
+
+<h1 id="where-to-find-it">Where To Find It</h1>
+<p>You can find the project on GitHub: <a href="https://github.com/nicoDs96/Trading-Bot---Deep-Reinforcement-Learning">Project Repo</a>.</p>
+
+<p>The repo also contains a <a href="https://github.com/nicoDs96/Trading-Bot---Deep-Reinforcement-Learning/blob/master/report.pdf">report</a> I used to describe the bot to the professor at the time, with some pills of background math theory.</p>
+
+<p>Feel free to open an issue or a pull request if you want to contribute.</p>
+
+<h1 id="background">Background</h1>
+<p>In the <a href="https://www.researchgate.net/publication/333107392_A_Deep_Reinforcement_Learning_Approach_for_Automated_Cryptocurrency_Trading">paper we based the implementation on</a> the authors try to adapt some Deep Reinforcement
+Learning techniques, namely DQN, Double DQN, and Dueling Double
+DQN, to allow an agent to trade cryptocurrency stocks. The trading
+environment simulation gives the possibility to either buy, hold or sell a position. The profit made during trading is measured with the Sharpe ratio index or a simple profit difference function.<br />
+In the reinforcement learning field, the agent is someone with a goal that should interact with an environment to reach its goal. You can think about it as your robot vacuum cleaner whose goal is to clean your house. An agent \(A\) can have states \(s_1, .., s_n\), like resting, cleaning, moving, etc., and can perform some actions \(a_1, .., a_m\) on the environment, like “suck the dust” or “move to another room”. Whenever an agent acts on the environment he modifies it, so the environment moves to a new state \(s_{t+1}\) and the agent collects a reward \(r_t\) telling him if he did a step towards its goal or not.<br />
+<img class="image" src="https://nicods96.github.io/hi/assets/images/drl-trading-bot/roomGif.gif" alt="Example Gif" />
+The whole deep reinforcement learning world is based on a simple fact: neural networks are universal function approximators, we can simply create a NN model and train it to resemble the Q functions or whatever RL functions you plan to use.</p>
+
+<h1 id="the-environment">The Environment</h1>
+<p>We can think of the Environment as a wrapper around our data with minimal access methods and a bit of logic. In detail, you can only access data by calling the method <code class="language-plaintext python highlighter-rouge">def get_state(self):</code>. it gives to you the current stock price window, corresponding to the environment state.<br />
+Then you can interact with it only with the <code class="language-plaintext python highlighter-rouge">def step(self, act):</code> method. It simply acts as the Agent on the environment (the input parameter), computes the reward for the agent and it updates some data structures to keep track of some econometric indexes during time, used to evaluate the model.<br />
+In detail, an Agent can either buy, sell, hold/do-nothing. If the agent has bought at a given price and then in the next step it does nothing this means he is holding a position because he thinks the price is going to rise. If the Agent has no position and he does not buy then he is doing nothing because he thinks it is not convenient to buy now.</p>
+
+<h1 id="the-agent">The Agent</h1>
+<p>The Agent is a wrapper for the model and it takes care of the training and inference logic. The test phase <code class="language-plaintext python highlighter-rouge">def test(self, env_test, model_name=None, path=None)</code> in the agent assumes you have an already trained model and you have exported it. It then loads the exported model into one of the models defined into <code class="language-plaintext highlighter-rouge">models.py</code> according to the parameters and then starts the canonical observe-act-collect loop, saving all the metrics needed to evaluate the model.<br />
+The training phase <code class="language-plaintext python highlighter-rouge">def train(self, env, path, num_episodes=40):</code>  is a bit more complex apparently because it included model optimization. The loop becomes observe-act-collect-optimize and the optimize phase requires a bit of background knowledge to be mastered (perfectly covered on the <a href="https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html">pytorch doc</a>, the code here is only an adaptation to a different kind of use case).<br />
+The code in the repo comes with some pretrained models <code class="language-plaintext highlighter-rouge">profit_reward_double_ddqn_model, profit_reward_double_dqn_model, profit_reward_dqn_model, sr_reward_double_ddqn_model, sr_reward_double_dqn_model, sr_reward_dqn_model</code> and the main.py only evalutes those pre-trained moedels. If you want also to train them you should check the <code class="language-plaintext highlighter-rouge">train_test.py</code> script.</p>
+
+<h1 id="replay-memory-buffer">Replay Memory Buffer</h1>
+<p>The replay memory buffer is a useful tool that is perfectly explained in <a href="https://towardsdatascience.com/deep-q-network-dqn-ii-b6bf911b6b2c">this article</a> from <a href="https://torres-ai.medium.com/">Jordi Torres</a> that I would like to quote:</p>
+<blockquote>
+  <p>We are trying to approximate a complex, nonlinear function, Q(s, a), with a Neural Network. To do this, we must calculate targets using the Bellman equation and then consider that we have a supervised learning problem at hand. However, <strong>one of the fundamental requirements for SGD optimization is that the training data is independent and identically distributed</strong> and when the Agent interacts with the Environment, the sequence of experience tuples can be highly correlated. The naive Q-learning algorithm that learns from each of these experiences tuples in sequential order runs the risk of getting swayed by the effects of this correlation.
+We can prevent action values from oscillating or diverging catastrophically using a large buffer of our past experience and sample training data from it, instead of using our latest experience. This technique is called <strong>replay buffer</strong> or <strong>experience buffer</strong>. The replay buffer contains a collection of experience tuples (S, A, R, S′). The tuples are gradually added to the buffer as we are interacting with the Environment. The simplest implementation is a buffer of fixed size, with new data added to the end of the buffer so that it pushes the oldest experience out of it. The act of sampling a small batch of tuples from the replay buffer in order to learn is known as <strong>experience replay</strong>.</p>
+</blockquote>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>Although the DRL is always used to play video games with AI, it is interesting to apply them also to other fields, since they are very promising AI methods. Although very exciting, I invite you to be always a bit skeptical about what you read. If you pay attention to both  <a href="https://github.com/nicoDs96/Trading-Bot---Deep-Reinforcement-Learning/blob/master/report.pdf">the report</a> of this project and <a href="https://link.springer.com/chapter/10.1007/978-3-030-19823-7_20">the original paper it is based on</a>, you will note that there isn’t any error plot or similar metrics. This is likely a sign that the results you are reading are not telling the whole truth. Indeed, in my report, I deliberately hid them to get a higher grade on the exam (and luckily it worked out), but the truth is that the models do not have a significant decrease in error. In brief, they do not learn anything and act almost randomly at each step.</p>
+
+
+
+    <div class="blog-navigation">
+        
+            <a class="prev" href="https://nicods96.github.io/hi/keep-training-on-vacations/">&laquo; Keep training on vacations</a>
+        
+        
+            <a class="next" href="https://nicods96.github.io/hi/dates-intersection-conditions-on-SCD-columns-like-a-pro/">Dates intersection on SCD columns like a pro &raquo;</a>
+        
+    </div>
+
+
+
+    <div class="related">
+    
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                    <h4>Related Posts</h4>
+                    <ul>
+                    
+                    <li class="relatedPost">
+                        <a href="https://nicods96.github.io/hi/fast-document-similarity-in-python/">Fast Document Similarity In Python with Minhash Locality Sensitive Hashing (MinHashLSH)
+                        
+                        </a>
+                    </li>
+                    
+                    
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+    
+        </ul>
+    
+</div>
+
+
+
+
+    <section class="author">
+    <div class="toleft">
+        <img
+            class="selfie"
+            src="https://nicods96.github.io/hi/assets/images/profile.jpg"
+            alt="Nicola Di Santo"
+        />
+    </div>
+
+    <div class="toright">
+        <h4 class="name">Nicola Di Santo</h4>
+        <p class="bio">A Person who loves tech, bikes and fighting sports</p>
+
+        <div class="share">
+            <!-- Note: Only use three share links if your site width is set to large -->
+            <!-- If site width is set to normal, you may choose any two share links -->
+            <a
+                class="twitter"
+                href="https://twitter.com/intent/tweet?text=https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/ - Designing A Deep Reinforcement Learning Trading Bot With PyTorch by @johndoe"
+            >
+                <svg class="icon icon-twitter">
+                    <use xlink:href="#icon-twitter"></use></svg
+                ><span class="icon-twitter">Tweet</span>
+            </a>
+
+            <a
+                class="facebook"
+                href="javascript:void(0)"
+                onclick="window.open('https://facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"
+            >
+                <svg class="icon icon-facebook">
+                    <use xlink:href="#icon-facebook"></use></svg
+                ><span class="icon-facebook-rect">Share</span>
+            </a>
+
+            <!-- <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/&amp;title=Designing A Deep Reinforcement Learning Trading Bot With PyTorch&amp;summary=A personal implementation of an existing paper about bitcoin trading using a deep reinforcement learning trading agent.&amp;source=https://nicods96.github.io/hi" target="_blank">
+                <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span class="icon-linkedin">Share</span>
+            </a> -->
+
+            <!-- <a class="reddit" href="https://reddit.com/submit?url=https://nicods96.github.io/hi/designing-a-pytorch-deep-reinforcement-learning-trading-bot/&amp;title=Designing A Deep Reinforcement Learning Trading Bot With PyTorch" target="_blank">
+                <svg class="icon icon-reddit"><use xlink:href="#icon-reddit"></use></svg><span class="icon-reddit">Share</span>
+            </a> -->
+        </div>
+    </div>
 </section>
+
+
+
+
+
+
+<footer class="footer-main">
+    Nicola Di Santo © 2025
+
+    <a class="link" href="https://nicods96.github.io/hi/feed.xml" target="_blank">
+        <svg class="icon icon-rss">
+            <use xlink:href="#icon-rss"></use>
+        </svg>
+    </a>
+
+    <p class="extra">
+        <a class="link" href="https://github.com/sergiokopplin/indigo">Indigo theme</a>
+        by
+        <a class="link" href="https://github.com/sergiokopplin/indigo">Kopplin</a>
+    </p>
+</footer>
+
+
         </div>
     </div>
 
