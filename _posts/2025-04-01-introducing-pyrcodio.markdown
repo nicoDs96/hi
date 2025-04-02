@@ -44,7 +44,7 @@ To use it while naming Git branches you can:
 git checkout -b $(pyrcodio)
 ```
 
-<img class="image" src="{{ site.url }}/assets/images/pyrcodio/1.png" alt="[1] Example Git branching"/>
+<img class="image" src="{{ site.url }}/assets/images/pyrcodio/1.jpeg" alt="[1] Example Git branching"/>
 
 To use it while naming Docker containers you can:
 
