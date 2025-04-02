@@ -27,7 +27,7 @@ NB: Useful for Italian-speaking people. People speaking other languages might no
 
 ## Getting Started
 
-I have always been fascinated by how Docker creates amazing container images like "pedantic-ice". After some years spent working with code and countless hours spent debating naming conventions for whatever, here is a solution: `pyrcodio`.
+I have always been fascinated by how Docker creates amazing container images name like "pedantic-ice". After some years spent working with code and countless hours spent debating naming conventions for whatever, here is a solution: `pyrcodio`.
 
 `pyrcodio` is a Python CLI utility that is able to generate names that might result unpleasant for people going to church, but fun for people who don't.
 
