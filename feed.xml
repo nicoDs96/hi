@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://nicods96.github.io/hi/feed.xml" rel="self" type="application/atom+xml" /><link href="https://nicods96.github.io/hi/" rel="alternate" type="text/html" /><updated>2025-04-02T08:47:14+00:00</updated><id>https://nicods96.github.io/hi/feed.xml</id><title type="html">Nicola Di Santo</title><subtitle>A blog about technology and stuff related</subtitle><entry><title type="html">Introducing pyrcodio</title><link href="https://nicods96.github.io/hi/introducing-pyrcodio/" rel="alternate" type="text/html" title="Introducing pyrcodio" /><published>2025-04-01T19:00:00+00:00</published><updated>2025-04-01T19:00:00+00:00</updated><id>https://nicods96.github.io/hi/introducing-pyrcodio</id><content type="html" xml:base="https://nicods96.github.io/hi/introducing-pyrcodio/"><![CDATA[<p><!-- TODO edit image -->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://nicods96.github.io/hi/feed.xml" rel="self" type="application/atom+xml" /><link href="https://nicods96.github.io/hi/" rel="alternate" type="text/html" /><updated>2025-04-02T09:15:27+00:00</updated><id>https://nicods96.github.io/hi/feed.xml</id><title type="html">Nicola Di Santo</title><subtitle>A blog about technology and stuff related</subtitle><entry><title type="html">Introducing pyrcodio</title><link href="https://nicods96.github.io/hi/introducing-pyrcodio/" rel="alternate" type="text/html" title="Introducing pyrcodio" /><published>2025-04-01T19:00:00+00:00</published><updated>2025-04-01T19:00:00+00:00</updated><id>https://nicods96.github.io/hi/introducing-pyrcodio</id><content type="html" xml:base="https://nicods96.github.io/hi/introducing-pyrcodio/"><![CDATA[<p><!-- TODO edit image -->
 <img class="image" src="https://nicods96.github.io/hi/assets/images/pyrcodio/Germano_Mosconi.gif" alt="Cover Image" /></p>
 
 <p>Once upon a time there were some 13-year-old kids bored as hell surfing the internet. They found Germano Mosconi on YouTube and they started to curse God for fun. They never stopped doing it.</p>
@@ -22,7 +22,7 @@ pyrcodio
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> <span class="si">$(</span>pyrcodio<span class="si">)</span>
 </code></pre></div></div>
 
-<p><img class="image" src="https://nicods96.github.io/hi/assets/images/pyrcodio/1.png" alt="[1] Example Git branching" /></p>
+<p><img class="image" src="https://nicods96.github.io/hi/assets/images/pyrcodio/1.jpeg" alt="[1] Example Git branching" /></p>
 
 <p>To use it while naming Docker containers you can:</p>
 
